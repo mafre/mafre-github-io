@@ -173,7 +173,7 @@ class Load extends Sprite {
           0xbc2733,
           Game
         )
-        element.appendChild(stage.element)
+        element.replaceWith(stage.element)
       })
       .onError((e) => {
         console.error(e)

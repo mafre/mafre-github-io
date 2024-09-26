@@ -4,11 +4,11 @@ import * as ReactDOM from "react-dom/client";
 import {  Routes, Route, BrowserRouter, Link, Outlet } from "react-router-dom";
 import Load from './load'
 
-const Jul = () => {
+const Game = () => {
   React.useEffect(() => {
 
       const load = new Load();
-      load.init(document.getElementById("app"));
+      load.init(document.getElementById("game"));
 
     }, []);
 
@@ -22,31 +22,20 @@ const Layout = () => {
   </div>
 }
 
-const Home = () => {
-
-  return <div></div>
-}
-
-const NoMatch = () => {
-
-  return <div></div>
-}
-
 const App = () => {
   return (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route exakt path="jul" element={<Jul />} />
-          <Route path="*" element={<NoMatch />} />
+          <Route index element={<Game />} />
+          <Route path="*" element={<div />} />
         </Route>
       </Routes>
     </>
   );
 };
 
-ReactDOM.createRoot(document.getElementById("r")).render(
+ReactDOM.createRoot(document.getElementById("app")).render(
     <BrowserRouter>
       <App />
     </BrowserRouter>
